@@ -1,0 +1,20 @@
+{% extends 'show/base.html' %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="headertitle"><a href="{% url 'show:index' %}" class="linktitle">Watcher</a></h1>
+	</div><!--col-->
+</div><!--row-->
+
+<div class="about">
+	<div class="row">
+		<div class="col-xs-12">
+			<p class="lead text-center abouttext">
+				Watcher is the app for binge watchers, weeaboos, soap opera enthusiasts, and procrastinators. Keep track of your episodes so you can watch without having to worry about forgetting what episode you're at.
+			</p>
+		</div><!--col-->
+	</div><!--row-->
+</div><!--about-->
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'show/base.html' %}
+{% block title %}Detail{% endblock%}
+
+{% block content %}
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="headertitle"><a href="{% url 'show:index' %}" class="linktitle">Watcher</a></h1>
+	</div><!--col-->
+</div><!--row-->
+
+<div class="row">
+	<div class="col-md-offset-1 col-xs-12 col-sm-10 text-center">
+		<div class="show-detail">
+			<h1 class="show-title">{{show}}</h1>
+
+			<h3 class="description-text">Description: {{show.description}}</h3>
+				<div class="show-season show-form">
+				<p class="show-info">Season: {{show.season}}</p>
+				</div>
+
+				<div class="show-episode show-form">
+					<p class="show-info">
+					Episode: {{show.episode}}
+					</p>
+				</div>
+
+				<div class="detail-form show-form">
+
+					<form action="{% url 'show:show-delete' show=show %}" method="post">
+					{% csrf_token %}
+					<button class="btn btn-secondary btn-lg" type="submit">Delete</button>
+					</form>
+				</div><!--btn group-->
+				
+		</div><!--show-detail-->
+	</div><!--col-->
+</div><!--row-->
+{% endblock %}

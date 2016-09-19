@@ -1,0 +1,93 @@
+{% extends 'show/base.html' %}
+{% block title %}Tracker{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="headertitle"><a href="{% url 'show:index' %}" class="linktitle">Watcher</a></h1>
+	</div><!--col-->
+</div><!--row-->
+
+<div class="menu">
+	<div class="row">
+		<div class="col-xs-12 col-sm-4">
+			<a href="{% url 'show:show-add' %}" class="cbtn index-btn hvr-glow">Add show</a>
+			<a href="{% url 'show:logout' %}" class="cbtn index-btn hvr-glow">Log out</a>
+		</div><!--col-->
+	</div><!--row-->
+</div><!--menu-->
+
+<div class="row">
+	<div class="col-md-offset-1 col-xs-12 col-sm-11">
+		<div class="shows">
+			<div class="row">
+				{% for show in shows %}
+				<div class='col-xs-12 col-sm-5 show'>
+					<h2 class="show-title"><a class="title-link" href="{% url 'show:show-detail' show=show %}">{{show.title}}</a></h2>
+					<div class="show-season show-form">
+					<p class="show-info">Season: {{show.season}}</p>
+					<form action="{% url 'show:addseason' show=show %}" method="post" class="change">
+						{% csrf_token %}
+
+						<button class="btn btn-default" type="submit">+</button>
+					</form>	
+
+					<form action="{% url 'show:subtractseason' show=show %}" method="post" class="change">
+						{% csrf_token %}
+
+						<button class="btn btn-default" type="submit">-</button>
+					</form>
+				</div>
+
+			<div class="show-episode show-form">
+				<p class="show-info">
+					Episode: {{show.episode}}   
+				</p>
+				<form action="{% url 'show:addepisode' show=show %}" method="post" class="change">
+					{% csrf_token %}
+
+					<button class="btn btn-default" type="submit">+</button>
+				</form>	
+
+				<form action="{% url 'show:subtractepisode' show=show %}" method="post" class="change">
+					{% csrf_token %}
+
+					<button class="btn btn-default" type="submit">-</button>
+				</form>	
+
+			</div>
+					<div class="show-description">
+						<h3 class="description-text">
+							{% ifnotequal show.description 'N/A' %}
+							Description: {{show.description}}
+							{% endifnotequal %}
+						</h3>
+					</div>
+				</div><!--show-->
+				{% endfor %}
+			</div><!--row-->
+		</div><!--shows-->
+	</div><!--col-->
+</div>
+
+{% else %}
+<div class="row">
+	<div class="col-xs-12">
+		<div class="landing">
+			<h1 id="apptitle">Watcher</h1>
+			<p class="text-center slogan">Keep track of your episodes.</p>
+		</div><!--landing-->
+	</div><!--col-->
+</div><!--row-->
+<div class="row">
+	<div class="col-xs-12 sign text-center">
+		<a href="{% url 'show:about' %}" class="cbtn user-btn hvr-glow">About</a>
+		<a href="{% url 'show:register' %}" class="cbtn user-btn hvr-glow">Sign up</a>
+		<a href="{% url 'show:login' %}" class="cbtn user-btn hvr-glow">Log in</a>
+	</div><!--sign-->
+</div><!--row-->
+{% endif %}
+
+{% endblock %}

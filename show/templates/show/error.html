@@ -1,0 +1,7 @@
+{% extends 'show/base.html' %}
+{% block title %}Error{% endblock %}
+
+{% block content %}
+<h1>Something went wrong!</h1>
+<a href="{% url 'show:index' %}" style="color: white;">Click me to go back</a>
+{% endblock %}

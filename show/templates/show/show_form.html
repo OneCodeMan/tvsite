@@ -1,0 +1,25 @@
+{% extends 'show/base.html' %}
+{% block title %}Add Show{% endblock %}
+
+{% block content %}
+<h1 class="user-title">Watcher</h1>
+
+{% if user.is_authenticated %}
+<div class="row">
+	<div class="col-md-offset-3 col-xs-12 col-sm-6 user-form">
+		<div class="form-group">
+			<form action="" method="post">
+			{% csrf_token %}
+			<h1>Add show</h1>
+			{% include 'show/form-template.html' %}
+			<br>
+			<button class="btn btn-secondary btn-lg" type="submit">Submit</button>
+			</form>
+		</div><!--form-group-->
+	</div><!--col-->
+</div><!--row-->
+{% else %}
+<a href="{% url 'show:register' %}">Sign up</a>
+<a href="{% url 'show:login' %}">Log in</a>
+{% endif %}
+{% endblock %}
