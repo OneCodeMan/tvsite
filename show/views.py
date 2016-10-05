@@ -29,6 +29,9 @@ class ShowDetail(DetailView):
 	slug_url_kwarg = "show"
 	template_name = 'show/show-detail.html'
 
+	def get_queryset(self):
+		return Show.objects.filter(owner=self.request.user)
+
 class ShowCreate(CreateView):
 	model = Show
 	fields = ['title', 'description', 'season', 'episode']

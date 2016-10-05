@@ -1,0 +1,154 @@
+* {
+	font-family: 'Roboto Condensed', sans-serif;
+
+}
+body {
+	background-color: #ee6d66;
+}
+
+.landing {
+	margin: 50px auto;
+	color: white;
+}
+
+#apptitle {
+	font-size: 150px;
+	text-align: center;
+}
+
+.slogan {
+	font-size: 30px;
+	white-space: nowrap;
+}
+
+.sign {
+	white-space: nowrap;
+}
+
+.cbtn, .cbtn:link, .cbtn:visited, .cbtn:hover {
+	color: black;
+	text-decoration: none;
+	border: 1px solid #fff;
+	background-color: #fff;
+	border-radius: 6px;
+
+}
+
+.user-btn {
+	font-size: 22px;
+	padding: 15px 18px 15px 18px;
+	margin: 20px;
+}
+
+/*User registration*/
+.form-group {
+	background: white;
+	border: solid;
+	text-align: center;
+	margin: 10px auto;
+	padding: 20px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.user-title {
+	color: white;
+	text-align: center;
+	font-size: 50px;
+}
+
+.user-form {
+	margin-top: 50px;
+}
+
+/*Index shows*/
+.shows {
+	margin: 0 auto;
+}
+
+.show, .show-detail {
+	border: solid lightgray;
+	background: linear-gradient(to left, #ECE9E6 , #FFFFFF);
+	border-radius: 10px;
+	border-width: 2px;
+	overflow: hidden;
+	height: 370px;
+	padding: 15px;
+	margin: 15px;
+}
+
+.headertitle {
+	text-align: center;
+	font-size: 50px;
+}
+
+.linktitle, .linktitle:link, .linktitle:visited, .linktitle:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.index-btn {
+	font-size: 15px;
+	padding: 5px 8px 5px 8px;
+	margin: 5px;
+}
+
+.show-title {
+	font-size: 45px;
+	width: 100%;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+
+.title-link, .title-link:link, .title-link:visited {
+	color: #ee6d66;
+	text-decoration: none;
+}
+
+.title-link:hover {
+	color: red;
+}
+
+.show-info {
+	font-size: 30px;
+}
+
+#yourshows {
+	color: white;
+}
+
+.menu {
+	text-align: center;
+}
+
+/*show-detail*/
+.show-detail {
+	text-align: center;
+}
+
+.show-title {
+	color: #ee6d66;
+}
+
+.show-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.detail-form button {
+	margin: 10px;
+}
+
+.about {
+	margin: 30px auto;
+}
+
+.abouttext {
+	color: white;
+	font-size: 30px;
+}
+
+.change {
+	margin: 5px;
+}
